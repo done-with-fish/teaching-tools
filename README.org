@@ -6,3 +6,6 @@ Tools to help with teaching.
 
 This is a sage program designed to compute the rref of a matrix.
 
+* 1.1.tex
+
+These are my LaTeXed notes for Section 1.1 of the book for Math 216.
