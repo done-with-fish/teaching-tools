@@ -12,3 +12,7 @@ row-reducing a given matrix.
 * 1.1.tex
 
 These are my LaTeXed notes for Section 1.1 of the book for Math 216.
+
+| this | is     | an | org-mode | table |
+|------+--------+----+----------+-------|
+| i    | filled | it | with     | stuff |
