@@ -1,2 +1,8 @@
 #+Title: teaching-tools
+
 Tools to help with teaching.
+
+* gaussjordan.py
+
+This is a sage program designed to compute the rref of a matrix.
+
