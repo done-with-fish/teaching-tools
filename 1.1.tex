@@ -1,0 +1,611 @@
+\documentclass[12pt]{article}
+
+\input{packages.tex}
+\input{style.tex}
+
+\begin{document}
+
+\title{Systems of Linear Equations}
+\author{Brian D.\ Fitzpatrick}
+\date{\S1.1}
+
+\maketitle
+
+% \tableofcontents
+
+\begin{sagesilent}
+  latex.matrix_delimiters(left='[', right=']')
+\end{sagesilent}
+
+\section{Motivation}
+
+Consider the system of $m$ equations with $n$ variables.
+\begin{equation}\label{eq:motivation}
+  \begin{array}{rcrcccrcr}
+    a_{11}x_1 & + & a_{12}x_2 & + & \dotsb & + & a_{1n}x_n & = & b_1    \\
+    a_{21}x_1 & + & a_{22}x_2 & + & \dotsb & + & a_{2n}x_n & = & b_2    \\
+    \vdots    &   & \vdots    &   & \ddots &   & \vdots    &   & \vdots \\
+    a_{m1}x_1 & + & a_{m2}x_2 & + & \dotsb & + & a_{mn}x_n & = & b_m
+  \end{array}\tag{$\ast$}
+\end{equation}
+\begin{itemize}
+\item[Q1.] Does a solution exist?
+\item[Q2.] How many solutions exist?
+\item[Q3.] How do we find \emph{all} solutions?
+\end{itemize}
+
+\begin{ex}
+  The system of $2$ equations and $3$ variables
+  \[
+  \begin{array}{rcrcrcr}
+    x & + & y & + & z    & = & 2  \\
+    x &   &   & - & 2\,z & = & 3
+  \end{array}
+  \]
+  is solved by $(x,y,z)=(5,-4,1)$ and $(x,y,z)=(1,2,-1)$. The system has
+  \emph{more than one} solution.
+\end{ex}
+
+\begin{ex}
+  The system of $3$ equations and $2$ variables
+  \[
+  \begin{array}{rcrcrr}
+    x     & + & 3\,y  & = & 2 & (1)\\
+    -2\,x & + & 7\,y  & = & 8 & (2)\\
+    4\,x  & - & 14\,y & = & 0 & (3)
+  \end{array}
+  \]
+  has \emph{no solutions} because
+  $
+  2\cdot(2)+(3)
+  =
+  \begin{cases}
+    0 & \text{LHS} \\
+    16 & \text{RHS}
+  \end{cases}
+  $
+\end{ex}
+
+\begin{samepage}
+  \begin{ex}
+    Find all solutions to the system
+    \[
+    \begin{array}{rcrcrr}
+      x    & + & 2\,y & = & 3 & (1) \\
+      3\,x & + & 4\,y & = & 0 & (2)
+    \end{array}
+    \]
+  \end{ex}
+  \begin{badidea}
+    Start deriving new equations. Equation (2) is
+    \[
+    y=-\frac{3}{4}\,x\tag{3}
+    \]
+    Plug (3) into (1) to obtain
+    \[
+    x+2\left(-\frac{3}{4}\,x\right)=3\Rightarrow x=-6\tag{4}
+    \]
+    Plug (4) into (3) to obtain
+    \[
+    y=\left(-\frac{3}{4}\right)(-6)=\frac{9}{2}\tag{5}
+    \]
+    Equations (4) and (5) then give $(x,y)=\left(-6,\nicefrac{9}{2}\right)$.
+  \end{badidea}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{question}
+    Why is this a bad idea?
+  \end{question}
+  \begin{enumerate}
+  \item Equations get messy in high dimensions.
+  \item The procedure is not guaranteed to terminate.
+  \end{enumerate}
+
+  \begin{definition}
+    Two systems are \emph{equivalent} if they have the same solutions.
+  \end{definition}
+
+  \begin{goodidea}
+    Replace ''hard'' systems with equivalent ''easy'' systems.
+  \end{goodidea}
+\end{samepage}
+
+\pagebreak
+\section{Augmented Matrices and Reduced Row-Echelon Form}
+
+\begin{definition}
+  The \emph{augmented matrix} of the system \eqref{eq:motivation} is
+  \[
+  \left[
+    \begin{array}{rrcr|r}
+      a_{11} & a_{12} & \dotsb & a_{1n} & b_{1} \\
+      a_{21} & a_{22} & \dotsb & a_{2n} & b_{2} \\
+      \vdots & \vdots & \ddots & \vdots & \vdots \\
+      a_{m1} & a_{m2} & \dotsb & a_{mn} & b_{m}
+    \end{array}
+  \right]
+  \]
+\end{definition}
+
+\begin{sagesilent}
+  A = matrix([[3,4,-8],[0,1,10],[9,7,-2]])
+  b = vector([0,6,-5])
+  M = A.augment(b, subdivide=True)
+\end{sagesilent}
+
+\begin{ex}
+  \begin{align*}
+    \begin{array}{rcrcrcr}
+      3\,x & + & 4\,y & - & 8\,z  & = & 0 \\
+      &   &    y & + & 10\,z & = & 6 \\
+      9\,x & + & 7\,y & - & 2\,z  & = & -5
+    \end{array} && \longleftrightarrow &&
+    \sage{M}
+  \end{align*}
+\end{ex}
+
+\begin{definition}
+  A matrix is in \emph{reduced row-echelon form} (rref) if
+  \begin{enumerate}
+  \item any zero-rows occur at the bottom
+  \item the first nonzero entry of a nonzero row is $1$ (called a \emph{pivot})
+  \item every pivot occurs to the right of any previous pivots
+  \item all other entries of a column containing a pivot are zero
+  \end{enumerate}
+\end{definition}
+
+\begin{sagesilent}
+  A1 = matrix([[1,0],[0,1]])
+  b1 = vector([0,2])
+  M1 = A1.augment(b1, subdivide=True)
+  A2 = matrix([[1,1,0,0],[0,0,1,2],[0,0,0,0]])
+  b2 = vector([3,1,0])
+  M2 = A2.augment(b2, subdivide=True)
+  A3 = matrix([[0,1,0,0,0],[0,0,0,1,0],[0,0,0,0,1],[0,0,0,0,0]])
+  b3 = vector([0,2,0,0])
+  M3 = A3.augment(b3, subdivide=True)
+\end{sagesilent}
+
+\begin{ex}
+  Each of the following is in rref
+  \begin{align*}
+    \sage{M1} &&
+    \sage{M2} &&
+    \sage{M3}
+  \end{align*}
+\end{ex}
+
+\begin{sagesilent}
+  A1 = matrix([[1,2,0,0],[0,1,3,1],[0,0,0,1]])
+  b1 = vector([3,1,2])
+  M1 = A1.augment(b1, subdivide=True)
+  A2 = matrix([[0,1,0,0],[1,0,1,1],[0,0,0,0]])
+  b2 = vector([2,1,0])
+  M2 = A2.augment(b2, subdivide=True)
+  A3 = matrix([[1,0,0],[0,0,1],[0,0,1]])
+  b3 = vector([3,2,0])
+  M3 = A3.augment(b3, subdivide=True)
+\end{sagesilent}
+
+\begin{ex}
+  Each of the following is \emph{not} in rref
+  \begin{align*}
+    \sage{M1} &&
+    \sage{M2} &&
+    \sage{M3}
+  \end{align*}
+\end{ex}
+
+\begin{definition}
+  A rref system is
+  \begin{description}
+  \item[\emph{consistent}] if the augmented column contains no pivot
+  \item[\emph{inconsistent}] if the augmented column contains a pivot
+  \end{description}
+\end{definition}
+
+\begin{definition}
+  A column in a consistent rref matrix corresponds to a
+  \begin{description}
+  \item[\emph{free variable}] if it contains no pivot
+  \item[\emph{dependent variable}] if it contains a pivot
+  \end{description}
+\end{definition}
+
+\begin{idea}
+  Solving consistent rref systems is \emph{easy}: write the dependent variables
+  in terms of the free variables.
+\end{idea}
+
+\begin{sagesilent}
+  A = matrix([[1,0,0,0],[0,0,1,2],[0,0,0,0]])
+  b = vector([4,-1,0])
+  M = A.augment(b, subdivide=True)
+  var('x1 x2 x3 x4')
+  u = matrix([[x1, x2, x3, x4]]).transpose()
+  v = matrix([[4,x2,-1-2*x4,x4]]).transpose()
+  w1 = matrix([4,0,-1,0]).transpose()
+  w2 = matrix([0,1,0,0]).transpose()
+  w3 = matrix([0,0,-2,1]).transpose()
+\end{sagesilent}
+
+\begin{samepage}
+  \begin{ex}
+    The rref system
+    \[
+    \sage{M}
+    \]
+    is consistent. The free variables are $\Set{x_2,x_4}$ and the dependent
+    variables are $\Set{x_1,x_3}$. The solutions are
+    \[
+    \sage{u}
+    =\sage{v}
+    =\sage{w1}+x_2\sage{w2}+x_4\sage{w3}
+    \]
+    Note that there are \emph{infinitely many solutions}.
+  \end{ex}
+\end{samepage}
+
+\begin{sagesilent}
+  A = matrix([[1,0,0],[0,1,0],[0,0,1]])
+  b = vector([3,4,8])
+  M = A.augment(b, subdivide=True)
+\end{sagesilent}
+
+\begin{ex}
+  The rref system
+  \[
+  \sage{M}
+  \]
+  is consistent with no free variables. The only solution is
+  $(x_1,x_2,x_3)=(3,4,8)$.
+\end{ex}
+
+\begin{sagesilent}
+  A = matrix([[0,1,0,0],[0,0,0,1],[0,0,0,0]])
+  b = vector([0,0,1])
+  M = A.augment(b, subdivide=True)
+\end{sagesilent}
+
+\begin{samepage}
+  \begin{ex}
+    The rref system
+    \[
+    \sage{M}
+    \]
+    is inconsistent. The last equation is $0=1$, which is impossible! This
+    system has \emph{no solutions}.
+  \end{ex}
+\end{samepage}
+
+\begin{samepage}
+  \begin{thm}
+    A consistent rref system has
+    \begin{description}
+    \item[\emph{a unique solution}] if it has no free variables
+    \item[\emph{infinitely many solutions}] if it has at least one free variable
+    \end{description}
+    An inconsistent rref system has no solutions.
+  \end{thm}
+\end{samepage}
+
+
+\pagebreak
+\section{Elementary Row Operations}
+
+\begin{definition}
+  There are three types of \emph{elementary row operations}:
+  \begin{description}
+  \item[\emph{row switching}:] a row can be switched with another row
+    $R_i\leftrightarrow R_j$
+  \item[\emph{row multiplication}:] a row can be multiplied by any nonzero
+    scalar $c\cdot R_i\to R_i$
+  \item[\emph{row addition}:] a row can be replaced by the sum of that row and a
+    multiple of another row $R_i+c\cdot R_j\to R_i$
+  \end{description}
+\end{definition}
+
+\begin{sagesilent}
+  A = random_matrix(ZZ, 4, 4)
+  b = vector([1,-1,2,3])
+  M = A.augment(b, subdivide=True)
+  N = copy(M)
+  M.swap_rows(1,3)
+\end{sagesilent}
+
+\begin{ex}[row switching]
+  \[
+  \sage{N}\xrightarrow{R_2\leftrightarrow R_4}\sage{M}
+  \]
+\end{ex}
+
+\begin{sagesilent}
+  A = random_matrix(ZZ, 4, 5)
+  b = vector([1,0,1,3])
+  M = A.augment(b, subdivide=True)
+  N = copy(M)
+  M.rescale_row(2,3)
+\end{sagesilent}
+
+\begin{ex}[row switching]
+  \[
+  \sage{N}\xrightarrow{3\cdot R_3\leftrightarrow R_3}\sage{M}
+  \]
+\end{ex}
+
+\begin{sagesilent}
+  A = random_matrix(ZZ, 4, 5)
+  b = vector([1,0,1,3])
+  M = A.augment(b, subdivide=True)
+  N = copy(M)
+  M.add_multiple_of_row(2,1,-3)
+\end{sagesilent}
+
+\begin{ex}[row addition]
+  \[
+  \sage{N}\xrightarrow{R_3-3\cdot R_2\to R_3}\sage{M}
+  \]
+\end{ex}
+
+\begin{samepage}
+  \begin{thm}
+    Performing an elementary row operation on an augmented matrix yields an
+    equivalent system.
+  \end{thm}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{idea}
+    To solve a given system, use elementary row operations to obtain a rref
+    system.
+  \end{idea}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{thm}[Gau{\ss}-Jordan Elimination]
+    Every augmented matrix is equivalent to a unique rref augmented
+    matrix. Furthermore, its rref may be obtained via elementary row operations.
+  \end{thm}
+\end{samepage}
+
+
+\begin{sagesilent}
+  A = matrix([[1,2],[3,4]])
+  b = vector([3,0])
+  M = A.augment(b, subdivide=True)
+  A1 = matrix([[1,2],[0,-2]])
+  b1 = vector([3,-9])
+  M1 = A1.augment(b1, subdivide=True)
+  A2 = matrix(QQ, [[1,2],[0,1]])
+  b2 = vector([3,9/2])
+  M2 = A2.augment(b2, subdivide=True)
+  A3 = matrix(QQ, [[1,0],[0,1]])
+  b3 = vector([-6,9/2])
+  M3 = A3.augment(b3, subdivide=True)
+\end{sagesilent}
+
+\pagebreak
+\begin{ex}
+  Find all solutions to the system
+  \[
+  \begin{array}{rcrcr}
+    x    & + & 2\,y & = & 3 \\
+    3\,x & + & 4\,y & = & 0
+  \end{array}
+  \]
+\end{ex}
+\begin{sol}
+  Row reduce
+  \begin{align*}
+    \sage{M}
+    & \xrightarrow{R_2-3\cdot R_1\to R_2}\sage{M1}
+    \xrightarrow{-\nicefrac{1}{2}\cdot R_2\to R_2}\sage{M2}
+    \xrightarrow{R_1-2\cdot R_2\to R_1}\sage{M3}
+  \end{align*}
+  This shows that
+  \[
+  \rref\sage{M}=\sage{M3}
+  \]
+  The rref of the system is consistent and has no free variables. Hence the
+  unique solution is $(x,y)=(-6,\nicefrac{9}{2})$.
+\end{sol}
+
+\begin{sagesilent}
+  A = matrix(QQ, [[0,4,1],[2,6,-2],[4,8,-5]])
+  b = vector([2,3,4])
+  M = A.augment(b, subdivide=True)
+  M0 = copy(M)
+  M.swap_rows(0,1)
+  M1 = copy(M)
+  M.rescale_row(0,1/2)
+  M2 = copy(M)
+  M.add_multiple_of_row(2,0,-4)
+  M3 = copy(M)
+  M.rescale_row(1,1/4)
+  M4 = copy(M)
+  M.add_multiple_of_row(0,1,-3)
+  M5 = copy(M)
+  M.add_multiple_of_row(2,1,4)
+  M6 = copy(M)
+  u = matrix([[x1, x2, x3]]).transpose()
+  v = matrix([[7/4*x3,1/2-1/4*x3,x3]]).transpose()
+  w1 = matrix([[0,1/2,0]]).transpose()
+  w2 = matrix([[7/4,-1/4,1]]).transpose()
+\end{sagesilent}
+
+\pagebreak
+\begin{ex}
+  Find all solutions to
+  \[
+  \begin{array}{rcrcrcr}
+           &   & 4\,x_2 & + & x_3    & = & 2 \\
+    2\,x_1 & + & 6\,x_2 & - & 2\,x_3 & = & 3 \\
+    4\,x_1 & + & 8\,x_2 & - & 5\,x_3 & = & 4
+  \end{array}
+  \]
+\end{ex}
+\begin{sol}
+  Row reduce
+  \begin{align*}
+    \sage{M0} 
+    &\xrightarrow{R1\leftrightarrow R_2}\sage{M1} \\
+    &\xrightarrow{\nicefrac{1}{2}\cdot R_1\to R_1}\sage{M2} \\
+    &\xrightarrow{R_3-4\cdot R_1\to R_3}\sage{M3} \\
+    &\xrightarrow{\nicefrac{1}{4}\cdot R_2\to R_2}\sage{M4} \\
+    &\xrightarrow{R_1-3\cdot R_2\to R_1}\sage{M5} \\
+    &\xrightarrow{R_3+4\cdot R_1\to R_3}\sage{M6}
+  \end{align*}
+  This shows that
+  \[
+  \rref\sage{M0}=\sage{M6}
+  \]
+  The rref is consistent with free variable $\Set{x_3}$ and dependent variables
+  $\Set{x_1,x_2}$. The system has infinitely many solutions given by
+  \[
+  \sage{u}=\sage{v}=\sage{w1}+x_3\sage{w2}
+  \]
+\end{sol}
+
+\pagebreak
+\section{Homogeneous Systems}
+
+\begin{definition}
+  The system \eqref{eq:motivation} is \emph{homogeneous} if
+  $b_1=b_2=\dotsb=b_m=0$. In a homogeneous system, the solution
+  $x_1=x_2=\dotsb=x_n=0$ is the \emph{trivial solution}. All other solutions are
+  called \emph{nontrivial solutions}.
+\end{definition}
+
+\begin{samepage}
+  \begin{thm}
+    A homogeneous system of $m$ equations and $n$ variables has infinitely many
+    solutions if $m<n$.
+  \end{thm}
+\end{samepage}
+
+
+\section{Rank and Nullity}
+
+\begin{samepage}
+  \begin{definition}
+    The \emph{rank} of a consistent system is the number of pivots in its
+    rref. Equivalently, the rank is the number of dependent variables.
+  \end{definition}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{thm}
+    $\mathtt{rank}\leq\#\mathtt{variables}$ and
+    $\mathtt{rank}\leq\#\mathtt{equations}$
+  \end{thm}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{thm}
+    A consistent system has
+    \begin{description}
+    \item[\emph{a unique solution}] if $\mathtt{rank}=\#\mathtt{variables}$
+    \item[\emph{infinitely many solutions}] if
+      $\mathtt{rank}<\#\mathtt{variables}$
+    \end{description}
+  \end{thm}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{definition}
+    The \emph{nullity} of a consistent system is the number of nonpivot columns
+    in its rref. Equivalently, the rank is the number of free variables.
+  \end{definition}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{thm}
+    $\mathtt{rank}+\mathtt{nullity}=\#\mathtt{variables}$
+  \end{thm}
+\end{samepage}
+
+
+\begin{samepage}
+  \begin{thm}
+    A consistent system has
+    \begin{description}
+    \item[\emph{a unique solution}] if $\mathtt{nullity}=0$
+    \item[\emph{infinitely many solutions}] if $\mathtt{nullity}>0$
+    \end{description}
+  \end{thm}
+\end{samepage}
+
+
+\begin{sagesilent}
+  A = matrix(SR, [[2,0,1,-1],[0,1,2,1],[2,-1,-1,-2]])
+  var('b1 b2 b3')
+  b = vector([b1, b2, b3])
+  M = A.augment(b, subdivide=True)
+  M0 = copy(M)
+  M.add_multiple_of_row(2, 0, -1)
+  M1 = copy(M)
+  M.add_multiple_of_row(2, 1, 1)
+  M2 = copy(M)
+  M.rescale_row(0, 1/2)
+  M3 = copy(M)
+\end{sagesilent}
+
+\begin{ex}
+  How many solutions will a system with coefficient matrix
+  \[
+  A = \sage{A}
+  \]
+  have?
+\end{ex}
+\begin{sol}
+  Row reduce
+  \begin{align*}
+    \sage{M0}
+    & \xrightarrow{R3-R1\to R_3}\sage{M1} \\
+    & \xrightarrow{R3+R2\to R_3}\sage{M2} \\
+    & \xrightarrow{\nicefrac{1}{2}\cdot R_1\to R_1}\sage{M3}
+  \end{align*}
+  The system is consistent if and only if $\sage{M3[-1][-1]}\neq 0$.
+
+  Suppose $\sage{M3[-1][-1]}\neq 0$, so that the system is consistent. 
+
+  Note that
+  \[
+  \mathtt{rank}=2<\#\mathtt{variables}=4
+  \]
+  so the system has infinitely many solutions.
+
+  Alternatively,
+  \[
+  \mathtt{nullity}=2>0
+  \]
+  so the system has infinitely many solutions.
+
+  Thus, any system with coefficient matrix $A$ will be inconsistent if
+  $\sage{M3[-1][-1]}\neq 0$ and consistent with infinitely many solutions if
+  $\sage{M3[-1][-1]}=0$.
+\end{sol}
+
+\newpage
+\begin{sagesilent}
+  import gaussjordan
+  A = random_matrix(ZZ, 4, 6, algorithm='echelonizable', rank=3)
+  var('b1 b2 b3 b4 b5')
+  b = vector([b1, b2, b3, b4])
+  M = A.base_extend(SR).augment(b, subdivide=True)
+\end{sagesilent}
+
+{\tiny
+\allowdisplaybreaks  
+\sage{gaussjordan.latex_reduction(A, M)}
+}
+
+\end{document}

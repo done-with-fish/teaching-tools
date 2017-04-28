@@ -1,0 +1,63 @@
+% \everymath{\mathtt{\xdef\tmp{\fam\the\fam\relax}\aftergroup\tmp}}
+% \everydisplay{\mathtt{\xdef\tmp{\fam\the\fam\relax}\aftergroup\tmp}}
+% \setbox0\hbox{$ $}
+
+\theoremstyle{plain}
+\newtheorem*{thm}{Thm}
+
+\theoremstyle{remark}
+\newtheorem*{recall}{Recall}
+
+\theoremstyle{definition}
+\newtheorem*{definition}{Def}
+\newtheorem*{ex}{Ex}
+\newtheorem*{badidea}{Bad Idea}
+\newtheorem*{goodidea}{Good Idea}
+\newtheorem*{question}{Q}
+\newtheorem*{idea}{Idea}
+\newtheorem*{sol}{Sol}
+\newtheorem*{notation}{Notation}
+\newtheorem*{note}{Note}
+
+\providecommand\given{} % so it exists
+\newcommand\SetSymbol[1][]{
+  \nonscript\,#1\vert \allowbreak \nonscript\,\mathopen{}}
+\DeclarePairedDelimiterX\Set[1]{\lbrace}{\rbrace}%
+{ \renewcommand\given{\SetSymbol[\delimsize]} #1 }
+
+\DeclareMathOperator{\rref}{\mathtt{rref}}
+\DeclareMathOperator{\rank}{\mathtt{rank}}
+\DeclareMathOperator{\nullity}{\mathtt{nullity}}
+\DeclareMathOperator{\ent}{\mathtt{ent}}
+
+\setcounter{secnumdepth}{0}
+
+\pagenumbering{gobble}
+
+% macros for math characters
+\def\AA{\mathbb{A}} \def\calA{\mathcal{A}} \def\scrA{\mathscr{A}} \def\frakA{\mathfrak{A}} \def\bA{\mathbf{A}} \def\ba{\mathbf{a}} \def\sfA{\mathsf{A}} 
+\def\BB{\mathbb{B}} \def\calB{\mathcal{B}} \def\scrB{\mathscr{B}} \def\frakB{\mathfrak{B}} \def\bB{\mathbf{B}} \def\bb{\mathbf{b}} \def\sfB{\mathsf{B}}
+\def\CC{\mathbb{C}} \def\calC{\mathcal{C}} \def\scrC{\mathscr{C}} \def\frakC{\mathfrak{C}} \def\bC{\mathbf{C}} \def\bc{\mathbf{c}} \def\sfC{\mathsf{C}}
+\def\DD{\mathbb{D}} \def\calD{\mathcal{D}} \def\scrD{\mathscr{D}} \def\frakD{\mathfrak{D}} \def\bD{\mathbf{D}} \def\bd{\mathbf{d}} \def\sfD{\mathsf{D}}
+\def\EE{\mathbb{E}} \def\calE{\mathcal{E}} \def\scrE{\mathscr{E}} \def\frakE{\mathfrak{E}} \def\bE{\mathbf{E}} \def\be{\mathbf{e}} \def\sfE{\mathsf{E}}
+\def\FF{\mathbb{F}} \def\calF{\mathcal{F}} \def\scrF{\mathscr{F}} \def\frakF{\mathfrak{F}} \def\bF{\mathbf{F}} \def\bf{\mathbf{f}} \def\sfF{\mathsf{F}}
+\def\GG{\mathbb{G}} \def\calG{\mathcal{G}} \def\scrG{\mathscr{G}} \def\frakG{\mathfrak{G}} \def\bG{\mathbf{G}} \def\bg{\mathbf{g}} \def\sfG{\mathsf{G}}
+\def\HH{\mathbb{H}} \def\calH{\mathcal{H}} \def\scrH{\mathscr{H}} \def\frakH{\mathfrak{H}} \def\bH{\mathbf{H}} \def\bh{\mathbf{h}} \def\sfH{\mathsf{H}}
+\def\II{\mathbb{I}} \def\calI{\mathcal{I}} \def\scrI{\mathscr{I}} \def\frakI{\mathfrak{I}} \def\bI{\mathbf{I}} \def\bi{\mathbf{i}} \def\sfI{\mathsf{I}}
+\def\JJ{\mathbb{J}} \def\calJ{\mathcal{J}} \def\scrJ{\mathscr{J}} \def\frakJ{\mathfrak{J}} \def\bJ{\mathbf{J}} \def\bj{\mathbf{j}} \def\sfJ{\mathsf{J}}
+\def\KK{\mathbb{K}} \def\calK{\mathcal{K}} \def\scrK{\mathscr{K}} \def\frakK{\mathfrak{K}} \def\bK{\mathbf{K}} \def\bk{\mathbf{k}} \def\sfK{\mathsf{K}}
+\def\LL{\mathbb{L}} \def\calL{\mathcal{L}} \def\scrL{\mathscr{L}} \def\frakL{\mathfrak{L}} \def\bL{\mathbf{L}} \def\bl{\mathbf{l}} \def\sfL{\mathsf{L}}
+\def\MM{\mathbb{M}} \def\calM{\mathcal{M}} \def\scrM{\mathscr{M}} \def\frakM{\mathfrak{M}} \def\bM{\mathbf{M}} \def\bm{\mathbf{m}} \def\sfM{\mathsf{M}}
+\def\NN{\mathbb{N}} \def\calN{\mathcal{N}} \def\scrN{\mathscr{N}} \def\frakN{\mathfrak{N}} \def\bN{\mathbf{N}} \def\bn{\mathbf{n}} \def\sfN{\mathsf{N}}
+\def\OO{\mathbb{O}} \def\calO{\mathcal{O}} \def\scrO{\mathscr{O}} \def\frakO{\mathfrak{O}} \def\bO{\mathbf{O}} \def\bo{\mathbf{o}} \def\sfO{\mathsf{O}}
+\def\PP{\mathbb{P}} \def\calP{\mathcal{P}} \def\scrP{\mathscr{P}} \def\frakP{\mathfrak{P}} \def\bP{\mathbf{P}} \def\bp{\mathbf{p}} \def\sfP{\mathsf{P}}
+\def\QQ{\mathbb{Q}} \def\calQ{\mathcal{Q}} \def\scrQ{\mathscr{Q}} \def\frakQ{\mathfrak{Q}} \def\bQ{\mathbf{Q}} \def\bq{\mathbf{q}} \def\sfQ{\mathsf{Q}}
+\def\RR{\mathbb{R}} \def\calR{\mathcal{R}} \def\scrR{\mathscr{R}} \def\frakR{\mathfrak{R}} \def\bR{\mathbf{R}} \def\br{\mathbf{r}} \def\sfR{\mathsf{R}}
+\def\SS{\mathbb{S}} \def\calS{\mathcal{S}} \def\scrS{\mathscr{S}} \def\frakS{\mathfrak{S}} \def\bS{\mathbf{S}} \def\bs{\mathbf{s}} \def\sfS{\mathsf{S}}
+\def\TT{\mathbb{T}} \def\calT{\mathcal{T}} \def\scrT{\mathscr{T}} \def\frakT{\mathfrak{T}} \def\bT{\mathbf{T}} \def\bt{\mathbf{t}} \def\sfT{\mathsf{T}}
+\def\UU{\mathbb{U}} \def\calU{\mathcal{U}} \def\scrU{\mathscr{U}} \def\frakU{\mathfrak{U}} \def\bU{\mathbf{U}} \def\bu{\mathbf{u}} \def\sfU{\mathsf{U}}
+\def\VV{\mathbb{V}} \def\calV{\mathcal{V}} \def\scrV{\mathscr{V}} \def\frakV{\mathfrak{V}} \def\bV{\mathbf{V}} \def\bv{\mathbf{v}} \def\sfV{\mathsf{V}}
+\def\WW{\mathbb{W}} \def\calW{\mathcal{W}} \def\scrW{\mathscr{W}} \def\frakW{\mathfrak{W}} \def\bW{\mathbf{W}} \def\bw{\mathbf{w}} \def\sfW{\mathsf{W}}
+\def\XX{\mathbb{X}} \def\calX{\mathcal{X}} \def\scrX{\mathscr{X}} \def\frakX{\mathfrak{X}} \def\bX{\mathbf{X}} \def\bx{\mathbf{x}} \def\sfX{\mathsf{X}}
+\def\YY{\mathbb{Y}} \def\calY{\mathcal{Y}} \def\scrY{\mathscr{Y}} \def\frakY{\mathfrak{Y}} \def\bY{\mathbf{Y}} \def\by{\mathbf{y}} \def\sfY{\mathsf{Y}}
+\def\ZZ{\mathbb{Z}} \def\calZ{\mathcal{Z}} \def\scrZ{\mathscr{Z}} \def\frakZ{\mathfrak{Z}} \def\bZ{\mathbf{Z}} \def\bz{\mathbf{z}} \def\sfZ{\mathsf{Z}}
