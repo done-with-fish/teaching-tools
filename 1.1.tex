@@ -569,8 +569,8 @@ Consider the system of $m$ equations with $n$ variables.
   Row reduce
   \begin{align*}
     \sage{M0}
-    & \xrightarrow{R3-R1\to R_3}\sage{M1} \\
-    & \xrightarrow{R3+R2\to R_3}\sage{M2} \\
+    & \xrightarrow{R_3-R_1\to R_3}\sage{M1} \\
+    & \xrightarrow{R_3+R_2\to R_3}\sage{M2} \\
     & \xrightarrow{\nicefrac{1}{2}\cdot R_1\to R_1}\sage{M3}
   \end{align*}
   The system is consistent if and only if $\sage{M3[-1][-1]}\neq 0$.
