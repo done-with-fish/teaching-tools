@@ -594,18 +594,18 @@ Consider the system of $m$ equations with $n$ variables.
   $\sage{M3[-1][-1]}=0$.
 \end{sol}
 
-\newpage
-\begin{sagesilent}
-  import gaussjordan
-  A = random_matrix(ZZ, 4, 6, algorithm='echelonizable', rank=3)
-  var('b1 b2 b3 b4 b5')
-  b = vector([b1, b2, b3, b4])
-  M = A.base_extend(SR).augment(b, subdivide=True)
-\end{sagesilent}
+% \newpage
+% \begin{sagesilent}
+%   import gaussjordan
+%   A = random_matrix(ZZ, 4, 6, algorithm='echelonizable', rank=3)
+%   var('b1 b2 b3 b4 b5')
+%   b = vector([b1, b2, b3, b4])
+%   M = A.base_extend(SR).augment(b, subdivide=True)
+% \end{sagesilent}
 
-{\tiny
-\allowdisplaybreaks  
-\sage{gaussjordan.latex_reduction(A, M)}
-}
+% {\tiny
+% \allowdisplaybreaks  
+% \sage{gaussjordan.latex_reduction(A, M)}
+% }
 
 \end{document}

@@ -530,20 +530,4 @@ try:
  _st_.inline(48, latex(M3[-1][-1]))
 except:
  _st_.goboom(594)
-_st_.current_tex_line = 598
-_st_.blockbegin()
-try:
-   import gaussjordan
-   A = random_matrix(ZZ, 4, 6, algorithm='echelonizable', rank=3)
-   var('b1 b2 b3 b4 b5')
-   b = vector([b1, b2, b3, b4])
-   M = A.base_extend(SR).augment(b, subdivide=True)
-except:
- _st_.goboom(604)
-_st_.blockend()
-try:
- _st_.current_tex_line = 608
- _st_.inline(49, latex(gaussjordan.latex_reduction(A, M)))
-except:
- _st_.goboom(608)
 _st_.endofdoc()
