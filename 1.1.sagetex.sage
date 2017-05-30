@@ -9,26 +9,26 @@ try:
 except:
  _st_.goboom(18)
 _st_.blockend()
-_st_.current_tex_line = 132
+_st_.current_tex_line = 134
 _st_.blockbegin()
 try:
    A = matrix([[3,4,-8],[0,1,10],[9,7,-2]])
    b = vector([0,6,-5])
    M = A.augment(b, subdivide=True)
 except:
- _st_.goboom(136)
+ _st_.goboom(138)
 _st_.blockend()
 try:
- _st_.current_tex_line = 146
+ _st_.current_tex_line = 148
  _st_.inline(0, latex(M))
 except:
- _st_.goboom(146)
+ _st_.goboom(148)
 try:
- _st_.current_tex_line = 146
+ _st_.current_tex_line = 148
  _st_.inline(0, latex(M))
 except:
- _st_.goboom(146)
-_st_.current_tex_line = 159
+ _st_.goboom(148)
+_st_.current_tex_line = 161
 _st_.blockbegin()
 try:
    A1 = matrix([[1,0],[0,1]])
@@ -41,39 +41,39 @@ try:
    b3 = vector([0,2,0,0])
    M3 = A3.augment(b3, subdivide=True)
 except:
- _st_.goboom(169)
+ _st_.goboom(171)
 _st_.blockend()
 try:
- _st_.current_tex_line = 177
+ _st_.current_tex_line = 179
  _st_.inline(1, latex(M1))
 except:
- _st_.goboom(177)
+ _st_.goboom(179)
 try:
- _st_.current_tex_line = 177
+ _st_.current_tex_line = 179
  _st_.inline(2, latex(M2))
 except:
- _st_.goboom(177)
+ _st_.goboom(179)
 try:
- _st_.current_tex_line = 177
+ _st_.current_tex_line = 179
  _st_.inline(3, latex(M3))
 except:
- _st_.goboom(177)
+ _st_.goboom(179)
 try:
- _st_.current_tex_line = 177
+ _st_.current_tex_line = 179
  _st_.inline(1, latex(M1))
 except:
- _st_.goboom(177)
+ _st_.goboom(179)
 try:
- _st_.current_tex_line = 177
+ _st_.current_tex_line = 179
  _st_.inline(2, latex(M2))
 except:
- _st_.goboom(177)
+ _st_.goboom(179)
 try:
- _st_.current_tex_line = 177
+ _st_.current_tex_line = 179
  _st_.inline(3, latex(M3))
 except:
- _st_.goboom(177)
-_st_.current_tex_line = 180
+ _st_.goboom(179)
+_st_.current_tex_line = 182
 _st_.blockbegin()
 try:
    A1 = matrix([[1,2,0,0],[0,1,3,1],[0,0,0,1]])
@@ -86,39 +86,39 @@ try:
    b3 = vector([3,2,0])
    M3 = A3.augment(b3, subdivide=True)
 except:
- _st_.goboom(190)
+ _st_.goboom(192)
 _st_.blockend()
 try:
- _st_.current_tex_line = 198
+ _st_.current_tex_line = 200
  _st_.inline(4, latex(M1))
 except:
- _st_.goboom(198)
+ _st_.goboom(200)
 try:
- _st_.current_tex_line = 198
+ _st_.current_tex_line = 200
  _st_.inline(5, latex(M2))
 except:
- _st_.goboom(198)
+ _st_.goboom(200)
 try:
- _st_.current_tex_line = 198
+ _st_.current_tex_line = 200
  _st_.inline(6, latex(M3))
 except:
- _st_.goboom(198)
+ _st_.goboom(200)
 try:
- _st_.current_tex_line = 198
+ _st_.current_tex_line = 200
  _st_.inline(4, latex(M1))
 except:
- _st_.goboom(198)
+ _st_.goboom(200)
 try:
- _st_.current_tex_line = 198
+ _st_.current_tex_line = 200
  _st_.inline(5, latex(M2))
 except:
- _st_.goboom(198)
+ _st_.goboom(200)
 try:
- _st_.current_tex_line = 198
+ _st_.current_tex_line = 200
  _st_.inline(6, latex(M3))
 except:
- _st_.goboom(198)
-_st_.current_tex_line = 222
+ _st_.goboom(200)
+_st_.current_tex_line = 224
 _st_.blockbegin()
 try:
    A = matrix([[1,0,0,0],[0,0,1,2],[0,0,0,0]])
@@ -131,67 +131,67 @@ try:
    w2 = matrix([0,1,0,0]).transpose()
    w3 = matrix([0,0,-2,1]).transpose()
 except:
- _st_.goboom(232)
+ _st_.goboom(234)
 _st_.blockend()
 try:
- _st_.current_tex_line = 238
+ _st_.current_tex_line = 240
  _st_.inline(7, latex(M))
 except:
- _st_.goboom(238)
+ _st_.goboom(240)
 try:
- _st_.current_tex_line = 243
+ _st_.current_tex_line = 245
  _st_.inline(8, latex(u))
 except:
- _st_.goboom(243)
+ _st_.goboom(245)
 try:
- _st_.current_tex_line = 244
+ _st_.current_tex_line = 246
  _st_.inline(9, latex(v))
 except:
- _st_.goboom(244)
+ _st_.goboom(246)
 try:
- _st_.current_tex_line = 245
+ _st_.current_tex_line = 247
  _st_.inline(10, latex(w1))
 except:
- _st_.goboom(245)
+ _st_.goboom(247)
 try:
- _st_.current_tex_line = 245
+ _st_.current_tex_line = 247
  _st_.inline(11, latex(w2))
 except:
- _st_.goboom(245)
+ _st_.goboom(247)
 try:
- _st_.current_tex_line = 245
+ _st_.current_tex_line = 247
  _st_.inline(12, latex(w3))
 except:
- _st_.goboom(245)
-_st_.current_tex_line = 251
+ _st_.goboom(247)
+_st_.current_tex_line = 253
 _st_.blockbegin()
 try:
    A = matrix([[1,0,0],[0,1,0],[0,0,1]])
    b = vector([3,4,8])
    M = A.augment(b, subdivide=True)
 except:
- _st_.goboom(255)
+ _st_.goboom(257)
 _st_.blockend()
 try:
- _st_.current_tex_line = 260
+ _st_.current_tex_line = 262
  _st_.inline(13, latex(M))
 except:
- _st_.goboom(260)
-_st_.current_tex_line = 266
+ _st_.goboom(262)
+_st_.current_tex_line = 268
 _st_.blockbegin()
 try:
    A = matrix([[0,1,0,0],[0,0,0,1],[0,0,0,0]])
    b = vector([0,0,1])
    M = A.augment(b, subdivide=True)
 except:
- _st_.goboom(270)
+ _st_.goboom(272)
 _st_.blockend()
 try:
- _st_.current_tex_line = 276
+ _st_.current_tex_line = 278
  _st_.inline(14, latex(M))
 except:
- _st_.goboom(276)
-_st_.current_tex_line = 310
+ _st_.goboom(278)
+_st_.current_tex_line = 312
 _st_.blockbegin()
 try:
    A = random_matrix(ZZ, 4, 4)
@@ -200,19 +200,19 @@ try:
    N = copy(M)
    M.swap_rows(1,3)
 except:
- _st_.goboom(316)
+ _st_.goboom(318)
 _st_.blockend()
 try:
- _st_.current_tex_line = 320
+ _st_.current_tex_line = 322
  _st_.inline(15, latex(N))
 except:
- _st_.goboom(320)
+ _st_.goboom(322)
 try:
- _st_.current_tex_line = 320
+ _st_.current_tex_line = 322
  _st_.inline(16, latex(M))
 except:
- _st_.goboom(320)
-_st_.current_tex_line = 324
+ _st_.goboom(322)
+_st_.current_tex_line = 326
 _st_.blockbegin()
 try:
    A = random_matrix(ZZ, 4, 5)
@@ -221,19 +221,19 @@ try:
    N = copy(M)
    M.rescale_row(2,3)
 except:
- _st_.goboom(330)
+ _st_.goboom(332)
 _st_.blockend()
 try:
- _st_.current_tex_line = 334
+ _st_.current_tex_line = 336
  _st_.inline(17, latex(N))
 except:
- _st_.goboom(334)
+ _st_.goboom(336)
 try:
- _st_.current_tex_line = 334
+ _st_.current_tex_line = 336
  _st_.inline(18, latex(M))
 except:
- _st_.goboom(334)
-_st_.current_tex_line = 338
+ _st_.goboom(336)
+_st_.current_tex_line = 340
 _st_.blockbegin()
 try:
    A = random_matrix(ZZ, 4, 5)
@@ -242,19 +242,19 @@ try:
    N = copy(M)
    M.add_multiple_of_row(2,1,-3)
 except:
- _st_.goboom(344)
+ _st_.goboom(346)
 _st_.blockend()
 try:
- _st_.current_tex_line = 348
+ _st_.current_tex_line = 350
  _st_.inline(19, latex(N))
 except:
- _st_.goboom(348)
+ _st_.goboom(350)
 try:
- _st_.current_tex_line = 348
+ _st_.current_tex_line = 350
  _st_.inline(20, latex(M))
 except:
- _st_.goboom(348)
-_st_.current_tex_line = 375
+ _st_.goboom(350)
+_st_.current_tex_line = 377
 _st_.blockbegin()
 try:
    import gaussjordan
@@ -262,24 +262,24 @@ try:
    b = vector([3,0])
    M = A.augment(b, subdivide=True)
 except:
- _st_.goboom(380)
+ _st_.goboom(382)
 _st_.blockend()
 try:
- _st_.current_tex_line = 395
+ _st_.current_tex_line = 397
  _st_.inline(21, latex(gaussjordan.latex_reduction(A, M)))
 except:
- _st_.goboom(395)
+ _st_.goboom(397)
 try:
- _st_.current_tex_line = 398
+ _st_.current_tex_line = 400
  _st_.inline(22, latex(M))
 except:
- _st_.goboom(398)
+ _st_.goboom(400)
 try:
- _st_.current_tex_line = 398
+ _st_.current_tex_line = 400
  _st_.inline(23, latex(M.rref()))
 except:
- _st_.goboom(398)
-_st_.current_tex_line = 404
+ _st_.goboom(400)
+_st_.current_tex_line = 406
 _st_.blockbegin()
 try:
    var('x1 x2 x3')
@@ -291,44 +291,44 @@ try:
    w1 = matrix.column([0, 1/2, 0])
    w2 = matrix.column([7/4, -1/4, 1])
 except:
- _st_.goboom(413)
+ _st_.goboom(415)
 _st_.blockend()
 try:
- _st_.current_tex_line = 429
+ _st_.current_tex_line = 431
  _st_.inline(24, latex(gaussjordan.latex_reduction(A, M)))
 except:
- _st_.goboom(429)
+ _st_.goboom(431)
 try:
- _st_.current_tex_line = 432
+ _st_.current_tex_line = 434
  _st_.inline(25, latex(M))
 except:
- _st_.goboom(432)
+ _st_.goboom(434)
 try:
- _st_.current_tex_line = 432
+ _st_.current_tex_line = 434
  _st_.inline(26, latex(M.rref()))
 except:
- _st_.goboom(432)
+ _st_.goboom(434)
 try:
- _st_.current_tex_line = 437
+ _st_.current_tex_line = 439
  _st_.inline(27, latex(u))
 except:
- _st_.goboom(437)
+ _st_.goboom(439)
 try:
- _st_.current_tex_line = 437
+ _st_.current_tex_line = 439
  _st_.inline(28, latex(v))
 except:
- _st_.goboom(437)
+ _st_.goboom(439)
 try:
- _st_.current_tex_line = 437
+ _st_.current_tex_line = 439
  _st_.inline(29, latex(w1))
 except:
- _st_.goboom(437)
+ _st_.goboom(439)
 try:
- _st_.current_tex_line = 437
+ _st_.current_tex_line = 439
  _st_.inline(30, latex(w2))
 except:
- _st_.goboom(437)
-_st_.current_tex_line = 515
+ _st_.goboom(439)
+_st_.current_tex_line = 517
 _st_.blockbegin()
 try:
    import gaussjordan
@@ -337,16 +337,16 @@ try:
    b = vector([b1, b2, b3])
    M = A.change_ring(SR).augment(b, subdivide=True)
 except:
- _st_.goboom(521)
+ _st_.goboom(523)
 _st_.blockend()
 try:
- _st_.current_tex_line = 526
+ _st_.current_tex_line = 528
  _st_.inline(31, latex(A))
 except:
- _st_.goboom(526)
+ _st_.goboom(528)
 try:
- _st_.current_tex_line = 533
+ _st_.current_tex_line = 535
  _st_.inline(32, latex(gaussjordan.latex_reduction(A, M)))
 except:
- _st_.goboom(533)
+ _st_.goboom(535)
 _st_.endofdoc()
