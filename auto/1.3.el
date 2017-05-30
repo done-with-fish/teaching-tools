@@ -1,9 +1,7 @@
-(TeX-add-style-hook "1.1"
+(TeX-add-style-hook "1.3"
  (lambda ()
     (LaTeX-add-bibliographies
      "mybib.bib")
-    (LaTeX-add-labels
-     "eq:motivation")
     (TeX-run-style-hooks
      "latex2e"
      "art12"

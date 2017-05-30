@@ -1,0 +1,230 @@
+\documentclass[12pt]{article}
+
+\input{packages.tex}
+\input{style.tex}
+
+\begin{document}
+
+\title{Determinants}
+\author{Brian D.\ Fitzpatrick}
+\date{\cite[\S1.5]{peterson}}
+
+\maketitle
+
+% \tableofcontents
+
+\begin{sagesilent}
+  latex.matrix_delimiters(left='[', right=']')
+\end{sagesilent}
+
+\begin{definition}
+  The \emph{$(i,j)$-submatrix} of a $n\times n$ matrix $A$ is the
+  $(n-1)\times(n-1)$ matrix obtained by deleting the $i$th row and $j$th column
+  of $A$. We denote the $(i,j)$-submatrix of $A$ by $A_{ij}$.
+\end{definition}
+
+\begin{sagesilent}
+  A = matrix([[1,2,3],[7,0,10],[0,-1,6]])
+  A21 = matrix([[2,3],[-1,6]])
+\end{sagesilent}
+\begin{ex}
+  $A = \sage{A}\implies A_{21} = \sage{A21}$
+\end{ex}
+
+
+\begin{definition}
+  The \emph{determinant} of a $1\times 1$ matrix $A=[a_{11}]$ is
+  $\det(A)=a_{11}$.
+\end{definition}
+
+\begin{definition}
+  The \emph{determinant} of a $n\times n$ matrix $A$ is
+  $\displaystyle\det(A)=\sum_{k=1}^n(-1)^{1+k}a_{1k}\det(A_{1k})$
+\end{definition}
+
+\begin{note}
+  We often write $\det(A)=\abs{A}$.
+\end{note}
+
+\begin{sagesilent}
+  var('a b c d')
+  A = matrix([[a,b],[c,d]])
+\end{sagesilent}
+\begin{ex}
+  Compute $\det\sage{A}$.
+\end{ex}
+\begin{sol}\leavevmode
+  \begin{align*}
+    \det(A) 
+    &= \sum_{k=1}^2(-1)^{1+k}a_{1k}\det(A_{1k}) \\
+    &= (-1)^{1+1}a_{11}\det(A_{11})+(-1)^{1+2}a_{12}\det(A_{12}) \\
+    &= a\det([d])-b\det([c]) \\
+    &= ad-bc
+  \end{align*}
+\end{sol}
+
+
+\newpage
+\begin{sagesilent}
+  var('a11 a12 a13 a21 a22 a23 a31 a32 a33')
+  A = matrix([[a11, a12, a13],[a21, a22, a23],[a31, a32, a33]])
+\end{sagesilent}
+\begin{ex}
+  Compute $\det\sage{A}$.
+\end{ex}
+\begin{sagesilent}
+  latex.matrix_delimiters(left='|', right='|')
+  M = lambda i,j: A.delete_rows([i-1]).delete_columns([j-1])
+\end{sagesilent}
+\begin{sol}\leavevmode
+  \begin{align*}
+    \det(A)
+    &= \sum_{k=1}^3(-1)^{1+k}a_{1k}\det(A_{1k}) \\
+    &= (-1)^{1+1}a_{11}\det(A_{11})+(-1)^{1+2}a_{12}+(-1)^{1+3}a_{13}\det(A_{13}) \\
+    &= a_{11}\sage{M(1,1)}-a_{12}\sage{M(1,2)}+a_{13}\sage{M(1,3)}
+  \end{align*}
+\end{sol}
+
+
+\newpage
+\begin{definition}
+  The \emph{$(i,j)$-minor} of $A$ is $M_{ij}=\det(A_{ij})$. The
+  \emph{$(i,j)$-cofactor} of $A$ is $C_{ij}=(-1)^{i+j}M_{ij}$.
+\end{definition}
+
+\begin{note}
+  We this notation, our formula for determinants is
+  \[
+  \det(A)=\sum_{k=1}^n a_{1k}C_{1k}
+  \]
+\end{note}
+\begin{sagesilent}
+  latex.matrix_delimiters(left='[', right=']')
+  var('a11 a12 a13 a21 a22 a23 a31 a32 a33')
+  A = matrix([[a11, a12, a13],[a21, a22, a23],[a31, a32, a33]])
+\end{sagesilent}
+\begin{ex}
+  For $A=\sage{A}$ we have%
+  \begin{sagesilent}
+    latex.matrix_delimiters(left='|', right='|')
+    M = lambda i,j: A.delete_rows([i-1]).delete_columns([j-1])
+  \end{sagesilent}%
+  \begin{align*}
+    C_{11} &= (-1)^{1+1}\sage{M(1,1)} =  \sage{M(1,1)} \\
+    C_{12} &= (-1)^{1+2}\sage{M(1,2)} = -\sage{M(1,2)} \\
+    C_{32} &= (-1)^{3+2}\sage{M(3,2)} = -\sage{M(3,2)}
+  \end{align*}
+\end{ex}
+
+\newpage
+\begin{note}
+  The signs of the cofactors can be remembered by
+  \[
+  \begin{matrix}
+    + & - & + & - & \cdots \\
+    - & + & - & + & \cdots \\
+    + & - & + & - & \cdots \\
+    \vdots & \vdots & \vdots & \vdots & \ddots
+  \end{matrix}
+  \]
+\end{note}
+
+
+\begin{thm}[Laplace Cofactor Expansion Theorem, Theorem 1.16 in \cite{peterson}]
+  For any $1\leq i\leq n$ we have
+  \begin{align*}
+    \det(A) &= \sum_{k=1}^n a_{ik}C_{ik}\tag{$i$th row expansion} \\
+    \det(A) &= \sum_{k=1}^n a_{ki}C_{ki}\tag{$i$th column expansion} 
+  \end{align*}
+\end{thm}
+
+\begin{idea}
+  The Laplace Cofactor Expansion Theorem allows us to compute determinants by
+  ``expanding'' about any row or column. This is nice because some rows or
+  columns may be easier to expand about than others.
+\end{idea}
+
+\newpage
+
+\begin{sagesilent}
+  latex.matrix_delimiters(left='|', right='|')
+  A = matrix([[1,2,3],[4,5,6],[7,8,9]])
+  M = lambda i,j: A.delete_rows([i-1]).delete_columns([j-1])
+\end{sagesilent}
+\begin{ex}
+  Compute $\sage{A}$.
+\end{ex}
+\begin{sol}
+  Expansion about $\Row_2$ gives
+  \[
+  \sage{A}
+  =(\sage{(-1)**(2+1)*A[1,0]})\sage{M(2,1)}
+  +(\sage{(-1)**(2+2)*A[1,1]})\sage{M(2,2)}
+  +(\sage{(-1)**(2+3)*A[1,2]})\sage{M(2,3)}
+  =\sage{A.det()}
+  \]
+  Expansion about $\Col_3$ gives
+  \[
+  \sage{A}
+  =(\sage{(-1)**(1+3)*A[0,2]})\sage{M(1,3)}
+  +(\sage{(-1)**(2+3)*A[1,2]})\sage{M(2,3)}
+  +(\sage{(-1)**(3+3)*A[2,2]})\sage{M(3,3)}
+  =\sage{A.det()}
+  \]
+\end{sol}
+
+\newpage
+\begin{sagesilent}
+  latex.matrix_delimiters(left='|', right='|')
+  A = matrix([[7,-3,0,4],[0,1,0,3],[2,1,-2,-5],[0,4,0,6]])
+  M = lambda X, i,j: X.delete_rows([i-1]).delete_columns([j-1])
+\end{sagesilent}
+\begin{ex}
+  Compute $\sage{A}$.
+\end{ex}
+\begin{sol}
+  Expansion about $\Col_3$ gives
+  \[
+  \sage{A}=(-2)\sage{M(A, 3, 3)}
+  \]
+  Then expand about $\Col_1$ to obtain
+  \[
+  \sage{M(A, 3, 3)} = (7)\sage{M(M(A, 3, 3), 1, 1)} = 7(6-12) = -42
+  \]
+  Hence
+  \[
+  \sage{A}=(-2)(-42)=\sage{A.det()}
+  \]
+\end{sol}
+
+
+\newpage
+\begin{thm}[Corollary 1.17 in \cite{peterson}]
+  If $A$ has a row or column of zeros, then $\det(A)=0$.
+\end{thm}
+
+\begin{thm}[Corollary 1.18 in \cite{peterson}]
+  The determinant of a triangular matrix is the product of its diagonal entries.
+\end{thm}
+
+\begin{thm}[Theorem 1.19 in \cite{peterson}]
+  $\det(A^\top)=\det(A)$
+\end{thm}
+
+\begin{thm}[Theorem 1.20 in \cite{peterson}]\leavevmode
+  \begin{enumerate}
+  \item $A\xrightarrow{R_i\leftrightarrow R_j}B\implies\det(B)=-\det(A)$
+  \item $A\xrightarrow{\lambda R_i\to R_i}B\implies\det(B)=\lambda\det(A)$
+  \item $A\xrightarrow{R_i+\lambda R_j\to R_i}B\implies\det(B)=\det(A)$
+  \end{enumerate}
+\end{thm}
+
+\begin{idea}
+  Determinants play nicely with elementary row operations.
+\end{idea}
+
+
+\bibliography{mybib.bib}{}
+\bibliographystyle{plain}
+
+\end{document}

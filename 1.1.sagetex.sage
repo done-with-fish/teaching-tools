@@ -254,280 +254,99 @@ try:
  _st_.inline(20, latex(M))
 except:
  _st_.goboom(348)
-_st_.current_tex_line = 376
+_st_.current_tex_line = 375
 _st_.blockbegin()
 try:
+   import gaussjordan
    A = matrix([[1,2],[3,4]])
    b = vector([3,0])
    M = A.augment(b, subdivide=True)
-   A1 = matrix([[1,2],[0,-2]])
-   b1 = vector([3,-9])
-   M1 = A1.augment(b1, subdivide=True)
-   A2 = matrix(QQ, [[1,2],[0,1]])
-   b2 = vector([3,9/2])
-   M2 = A2.augment(b2, subdivide=True)
-   A3 = matrix(QQ, [[1,0],[0,1]])
-   b3 = vector([-6,9/2])
-   M3 = A3.augment(b3, subdivide=True)
 except:
- _st_.goboom(389)
+ _st_.goboom(380)
 _st_.blockend()
 try:
- _st_.current_tex_line = 408
- _st_.inline(21, latex(M))
+ _st_.current_tex_line = 395
+ _st_.inline(21, latex(gaussjordan.latex_reduction(A, M)))
 except:
- _st_.goboom(408)
+ _st_.goboom(395)
 try:
- _st_.current_tex_line = 408
- _st_.inline(22, latex(M1))
+ _st_.current_tex_line = 398
+ _st_.inline(22, latex(M))
 except:
- _st_.goboom(408)
+ _st_.goboom(398)
 try:
- _st_.current_tex_line = 408
- _st_.inline(23, latex(M2))
+ _st_.current_tex_line = 398
+ _st_.inline(23, latex(M.rref()))
 except:
- _st_.goboom(408)
-try:
- _st_.current_tex_line = 408
- _st_.inline(24, latex(M3))
-except:
- _st_.goboom(408)
-try:
- _st_.current_tex_line = 408
- _st_.inline(21, latex(M))
-except:
- _st_.goboom(408)
-try:
- _st_.current_tex_line = 408
- _st_.inline(22, latex(M1))
-except:
- _st_.goboom(408)
-try:
- _st_.current_tex_line = 408
- _st_.inline(23, latex(M2))
-except:
- _st_.goboom(408)
-try:
- _st_.current_tex_line = 408
- _st_.inline(24, latex(M3))
-except:
- _st_.goboom(408)
-try:
- _st_.current_tex_line = 411
- _st_.inline(25, latex(M))
-except:
- _st_.goboom(411)
-try:
- _st_.current_tex_line = 411
- _st_.inline(26, latex(M3))
-except:
- _st_.goboom(411)
-_st_.current_tex_line = 417
+ _st_.goboom(398)
+_st_.current_tex_line = 404
 _st_.blockbegin()
 try:
-   A = matrix(QQ, [[0,4,1],[2,6,-2],[4,8,-5]])
+   var('x1 x2 x3')
+   A = matrix([[0,4,1],[2,6,-2],[4,8,-5]])
    b = vector([2,3,4])
    M = A.augment(b, subdivide=True)
-   M0 = copy(M)
-   M.swap_rows(0,1)
-   M1 = copy(M)
-   M.rescale_row(0,1/2)
-   M2 = copy(M)
-   M.add_multiple_of_row(2,0,-4)
-   M3 = copy(M)
-   M.rescale_row(1,1/4)
-   M4 = copy(M)
-   M.add_multiple_of_row(0,1,-3)
-   M5 = copy(M)
-   M.add_multiple_of_row(2,1,4)
-   M6 = copy(M)
-   u = matrix([[x1, x2, x3]]).transpose()
-   v = matrix([[7/4*x3,1/2-1/4*x3,x3]]).transpose()
-   w1 = matrix([[0,1/2,0]]).transpose()
-   w2 = matrix([[7/4,-1/4,1]]).transpose()
+   u = matrix.column([x1, x2, x3])
+   v = matrix.column([7/4*x3, 1/2-1/4*x3, x3])
+   w1 = matrix.column([0, 1/2, 0])
+   w2 = matrix.column([7/4, -1/4, 1])
 except:
- _st_.goboom(438)
+ _st_.goboom(413)
 _st_.blockend()
 try:
- _st_.current_tex_line = 461
- _st_.inline(27, latex(M0))
+ _st_.current_tex_line = 429
+ _st_.inline(24, latex(gaussjordan.latex_reduction(A, M)))
 except:
- _st_.goboom(461)
+ _st_.goboom(429)
 try:
- _st_.current_tex_line = 461
- _st_.inline(28, latex(M1))
+ _st_.current_tex_line = 432
+ _st_.inline(25, latex(M))
 except:
- _st_.goboom(461)
+ _st_.goboom(432)
 try:
- _st_.current_tex_line = 461
- _st_.inline(29, latex(M2))
+ _st_.current_tex_line = 432
+ _st_.inline(26, latex(M.rref()))
 except:
- _st_.goboom(461)
+ _st_.goboom(432)
 try:
- _st_.current_tex_line = 461
- _st_.inline(30, latex(M3))
+ _st_.current_tex_line = 437
+ _st_.inline(27, latex(u))
 except:
- _st_.goboom(461)
+ _st_.goboom(437)
 try:
- _st_.current_tex_line = 461
- _st_.inline(31, latex(M4))
+ _st_.current_tex_line = 437
+ _st_.inline(28, latex(v))
 except:
- _st_.goboom(461)
+ _st_.goboom(437)
 try:
- _st_.current_tex_line = 461
- _st_.inline(32, latex(M5))
+ _st_.current_tex_line = 437
+ _st_.inline(29, latex(w1))
 except:
- _st_.goboom(461)
+ _st_.goboom(437)
 try:
- _st_.current_tex_line = 461
- _st_.inline(33, latex(M6))
+ _st_.current_tex_line = 437
+ _st_.inline(30, latex(w2))
 except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 461
- _st_.inline(27, latex(M0))
-except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 461
- _st_.inline(28, latex(M1))
-except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 461
- _st_.inline(29, latex(M2))
-except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 461
- _st_.inline(30, latex(M3))
-except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 461
- _st_.inline(31, latex(M4))
-except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 461
- _st_.inline(32, latex(M5))
-except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 461
- _st_.inline(33, latex(M6))
-except:
- _st_.goboom(461)
-try:
- _st_.current_tex_line = 464
- _st_.inline(34, latex(M0))
-except:
- _st_.goboom(464)
-try:
- _st_.current_tex_line = 464
- _st_.inline(35, latex(M6))
-except:
- _st_.goboom(464)
-try:
- _st_.current_tex_line = 469
- _st_.inline(36, latex(u))
-except:
- _st_.goboom(469)
-try:
- _st_.current_tex_line = 469
- _st_.inline(37, latex(v))
-except:
- _st_.goboom(469)
-try:
- _st_.current_tex_line = 469
- _st_.inline(38, latex(w1))
-except:
- _st_.goboom(469)
-try:
- _st_.current_tex_line = 469
- _st_.inline(39, latex(w2))
-except:
- _st_.goboom(469)
-_st_.current_tex_line = 547
+ _st_.goboom(437)
+_st_.current_tex_line = 515
 _st_.blockbegin()
 try:
-   A = matrix(SR, [[2,0,1,-1],[0,1,2,1],[2,-1,-1,-2]])
+   import gaussjordan
+   A = matrix([[2,0,1,-1],[0,1,2,1],[2,-1,-1,-2]])
    var('b1 b2 b3')
    b = vector([b1, b2, b3])
-   M = A.augment(b, subdivide=True)
-   M0 = copy(M)
-   M.add_multiple_of_row(2, 0, -1)
-   M1 = copy(M)
-   M.add_multiple_of_row(2, 1, 1)
-   M2 = copy(M)
-   M.rescale_row(0, 1/2)
-   M3 = copy(M)
+   M = A.change_ring(SR).augment(b, subdivide=True)
 except:
- _st_.goboom(559)
+ _st_.goboom(521)
 _st_.blockend()
 try:
- _st_.current_tex_line = 564
- _st_.inline(40, latex(A))
+ _st_.current_tex_line = 526
+ _st_.inline(31, latex(A))
 except:
- _st_.goboom(564)
+ _st_.goboom(526)
 try:
- _st_.current_tex_line = 575
- _st_.inline(41, latex(M0))
+ _st_.current_tex_line = 533
+ _st_.inline(32, latex(gaussjordan.latex_reduction(A, M)))
 except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 575
- _st_.inline(42, latex(M1))
-except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 575
- _st_.inline(43, latex(M2))
-except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 575
- _st_.inline(44, latex(M3))
-except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 575
- _st_.inline(41, latex(M0))
-except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 575
- _st_.inline(42, latex(M1))
-except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 575
- _st_.inline(43, latex(M2))
-except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 575
- _st_.inline(44, latex(M3))
-except:
- _st_.goboom(575)
-try:
- _st_.current_tex_line = 576
- _st_.inline(45, latex(M3[-1][-1]))
-except:
- _st_.goboom(576)
-try:
- _st_.current_tex_line = 578
- _st_.inline(46, latex(M3[-1][-1]))
-except:
- _st_.goboom(578)
-try:
- _st_.current_tex_line = 593
- _st_.inline(47, latex(M3[-1][-1]))
-except:
- _st_.goboom(593)
-try:
- _st_.current_tex_line = 594
- _st_.inline(48, latex(M3[-1][-1]))
-except:
- _st_.goboom(594)
+ _st_.goboom(533)
 _st_.endofdoc()

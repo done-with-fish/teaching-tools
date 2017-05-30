@@ -1,0 +1,168 @@
+\documentclass[12pt]{article}
+
+\input{packages.tex}
+\input{style.tex}
+
+\begin{document}
+
+\title{Special Matrices and\\ Additional Properties of Matrices}
+\author{Brian D.\ Fitzpatrick}
+\date{\cite[\S1.4]{peterson}}
+
+\maketitle
+
+% \tableofcontents
+
+\begin{sagesilent}
+  latex.matrix_delimiters(left='[', right=']')
+\end{sagesilent}
+
+\begin{definition}
+  A square matrix $A$ is \emph{diagonal} if $a_{ij}=0$ for $i\neq j$.
+\end{definition}
+
+\begin{sagesilent}
+  A = matrix.diagonal([3,-1,1/2,0])
+  B = matrix.diagonal([3,1])
+\end{sagesilent}
+
+\begin{ex}
+  The matrices
+  \begin{align*}
+    \sage{A} && \sage{B} && I_n && 0_{n\times n}
+  \end{align*}
+  are diagonal.
+\end{ex}
+
+\begin{note}
+  We write $\diag(\lambda_1,\lambda_2,\dotsc,\lambda_n)
+  =
+    \begin{bmatrix}
+      \lambda_1 &           &        &           \\
+      & \lambda_2 &        &           \\
+      &           & \ddots &           \\
+      &           &        & \lambda_n 
+    \end{bmatrix}
+  $
+\end{note}
+
+\newpage
+
+\begin{thm}[Theorem 1.11 in \cite{peterson}]
+  Let $A = \diag(a_1,\dotsc,a_n)$ and $B = \diag(b_1,\dotsc,b_n)$.  Then
+  \begin{enumerate}
+  \item $A+B=\diag(a_1+b_1,\dotsc,a_n+b_n)$
+  \item $AB=\diag(a_1b_2,\dotsc,a_nb_n)$
+  \item $A\in\GL_n(\RR)$ if and only if each $a_i\neq 0$. Furthermore, in this
+    case, $A^{-1}=\diag(\nicefrac{1}{a_1},\dotsc,\nicefrac{1}{a_n})$
+  \end{enumerate}
+\end{thm}
+
+\begin{definition}
+  A square matrix $A$ is
+  \begin{description}
+  \item[\emph{upper triangular}] if $a_{ij}=0$ for $i>j$
+  \item[\emph{lower triangular}] if $a_{ij}=0$ for $j>i$
+  \end{description}
+\end{definition}
+
+
+\begin{sagesilent}
+  A = matrix([[1,4,2],[0,0,4],[0,0,1]])
+  B = matrix([[0,0,0],[2,8,0],[4,9,7]])
+\end{sagesilent}
+\begin{ex}
+  We have
+  \begin{align*}
+    \underbrace{\sage{A}}_{\textnormal{upper triangular}} &&
+    \underbrace{\sage{B}}_{\textnormal{lower triangular}}
+  \end{align*}
+\end{ex}
+
+\begin{thm}[Theorem 1.12 in \cite{peterson}]
+  Suppose $A$ and $B$ are upper triangular. Then
+  \begin{enumerate}
+  \item $A+B$ is upper triangular.
+  \item $AB$ is upper triangular.
+  \item $A$ is invertible if and only if each diagonal entry is nonzero.
+  \end{enumerate}
+  The corresponding theorem holds for lower triangular matrices.
+\end{thm}
+
+\newpage
+\begin{definition}
+  The \emph{transpose} of a $m\times n$ matrix $A$ is the $n\times m$ matrix
+  $A^\top$ whose entries are $[A^\top]_{ij}=a_{ji}$.
+\end{definition}
+
+\begin{sagesilent}
+  A = matrix([[1,2,3],[4,5,6]])
+\end{sagesilent}
+\begin{ex}
+  $A=\sage{A}\implies A^\top=\sage{A.transpose()}$
+\end{ex}
+
+\begin{thm}[Theorem 1.13 in \cite{peterson}]\leavevmode
+  \begin{enumerate}
+  \item $(A^\top)^\top=A$
+  \item $(A+B)^\top=A^\top+B^\top$
+  \item $(\lambda A)^\top=\lambda A^\top$
+  \item $(AB)^\top=B^\top A^\top$
+  \item $(A^\top)^{-1}=(A^{-1})^\top$
+  \end{enumerate}
+\end{thm}
+\begin{proof}
+  To prove that $(AB)^\top=B^\top A^\top$, note that
+  \begin{align*}
+    [(AB)^\top]_{ij}
+    &= [AB]_{ji} \\
+    &= \sum_{k=1}^n [A]_{jk}[B]_{ki} \\
+    &= \sum_{k=1}^n [A^\top]_{kj}[B^\top]_{ik} \\
+    &= \sum_{k=1}^n [B^\top]_{ik}[A^\top]_{kj} \\
+    &= [B^\top A^\top]_{ij}
+  \end{align*}
+  Hence $(AB)^\top=B^\top A^\top$.
+\end{proof}
+
+
+\newpage
+\begin{definition}
+  A matrix $A$ is \emph{symmetric} if $A^\top=A$. 
+\end{definition}
+
+\begin{idea}
+  $\textnormal{rows of }A=\textnormal{columns of }A^\top$
+\end{idea}
+
+\begin{definition}
+  We denote the collection of all $n\times n$ matrices by $\Sym_n(\RR)$.
+\end{definition}
+
+\begin{sagesilent}
+  A = matrix([[1,2,3],[2,4,5],[3,5,6]])
+  B = matrix([[1,2,3],[4,5,6],[7,8,9]])
+\end{sagesilent}
+\begin{ex}
+  We have
+  \begin{align*}
+    \underbrace{\sage{A}}_{\textnormal{symmetric}} &&
+    \underbrace{\sage{B}}_{\textnormal{not symmetric}}
+  \end{align*}
+\end{ex}
+
+
+\begin{thm}[Theorem 1.14 in \cite{peterson}]\leavevmode
+  \begin{enumerate}
+  \item If $A$ and $B$ are symmetric, then $A+B$ is symmetric.
+  \item If $A$ is symmetric, then $\lambda A$ is symmetric.
+  \item $A^\top A$ and $A A^\top$ is symmetric.
+  \item If $A$ is invertible and symmetric, then $A^{-1}$ is symmetric.
+  \end{enumerate}
+\end{thm}
+
+
+
+\bibliography{mybib.bib}{}
+\bibliographystyle{plain}
+
+\end{document}

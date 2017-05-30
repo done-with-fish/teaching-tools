@@ -1,0 +1,208 @@
+\message{ !name(1.3.tex)}\documentclass[12pt]{article}
+
+\input{packages.tex}
+\input{style.tex}
+
+\begin{document}
+
+\message{ !name(1.3.tex) !offset(-3) }
+
+
+\title{Inverses of Matrices}
+\author{Brian D.\ Fitzpatrick}
+\date{\cite[\S1.3]{peterson}}
+
+\maketitle
+
+% \tableofcontents
+
+\begin{sagesilent}
+  latex.matrix_delimiters(left='[', right=']')
+\end{sagesilent}
+
+\begin{definition}
+  The \emph{inverse} of $A\in M_{n\times n}(\RR)$ is a matrix $B\in M_{n\times
+    n}(\RR)$ such that $AB=BA=I$.
+\end{definition}
+
+\begin{sagesilent}
+  A = matrix([[1,2],[3,5]]) 
+  B = matrix([[-5,2],[3,-1]])
+\end{sagesilent}
+
+\begin{ex}
+  Let $A=\sage{A}$ and $B=\sage{B}$. Then
+  \begin{align*}
+    AB &= \sage{A}\sage{B} = \sage{A*B} = I \\
+    BA &= \sage{B}\sage{A} = \sage{B*A} = I
+  \end{align*}
+  Hence $B$ is an inverse of $A$.
+\end{ex}
+
+\begin{ex}
+  The matrix $0_{n\times n}$ does not have an inverse since $0_{n\times
+    n}B=0_{n\times n}\neq I$ whenever $B\in M_{n\times n}(\RR)$.
+\end{ex}
+
+\begin{sagesilent}
+  A = matrix([[1,1],[0,0]])
+  var('b11 b12 b21 b22')
+  B = matrix([[b11, b12],[b21, b22]])
+\end{sagesilent}
+
+\begin{ex}
+  The matrix $A=\sage{A}$ has no inverse since
+  \[
+  AB = \sage{A}\sage{B} = \sage{A*B}
+  \]
+  whenever $B\in M_{2\times 2}(\RR)$.
+\end{ex}
+
+\begin{definition}
+  A matrix is \emph{invertible} or \emph{nonsingular} if it has an inverse. A
+  matrix is \emph{noninvertible} or \emph{singular} if it does not have an
+  inverse.
+\end{definition}
+
+\begin{definition}
+  The collection of all $n\times n$ invertible matrices is denoted by $\GL_n(\RR)$.
+\end{definition}
+
+\begin{thm}[Theorem 1.4 in \cite{peterson}]
+  Inverses are unique. That is, let $A\in\GL_n(\RR)$ have inverses $B_1$ and
+  $B_2$. Then $B_1=B_2$.
+\end{thm}
+\begin{proof}
+  $B_1=B_1I=B_1(AB_2)=(B_1A)B_2=IB_2=B_2$
+\end{proof}
+
+\begin{note}
+  Since inverses are unique, we denote the inverse of $A$ by $A^{-1}$.
+\end{note}
+
+\begin{question}
+  How do we find $A^{-1}$?
+\end{question}
+
+\begin{answer}\leavevmode
+  \begin{enumerate}
+  \item Form the augmented matrix: $[A\mid I]$.
+  \item Use elementary row operations to reduce $A$ into rref: $[A\mid
+    I]\rightsquigarrow[\rref(A)\mid B]$.
+  \item If $\rref(A)=I$, then $B=A^{-1}$. Otherwise, $A$ is not invertible.
+  \end{enumerate}
+\end{answer}
+
+\begin{sagesilent}
+  import gaussjordan
+  A = matrix([[2,1,3],[2,1,1],[4,5,1]])
+  B = identity_matrix(3)
+  M = A.augment(B, subdivide=True)
+\end{sagesilent}
+
+\newpage
+\begin{ex}
+  Find the inverse of $A=\sage{A}$.
+\end{ex}
+\begin{sol}
+  Row reduce
+  {\allowdisplaybreaks  
+    \sage{gaussjordan.latex_reduction(M)}}%
+  This gives $A^{-1}=\sage{A.inverse()}$.
+\end{sol}
+
+\newpage
+\begin{definition}
+  A \emph{$n\times n$ elementary matrix} is a matrix obtained by performing
+  exactly one elementary row operation on $I_n$.
+\end{definition}
+
+
+\begin{sagesilent}
+  I2 = identity_matrix(2)
+  E2 = elementary_matrix(2, row1=1, scale=3)
+  I3 = identity_matrix(3)
+  E3 = elementary_matrix(3, row1=1, row2=0, scale=-1/2)
+  I4 = identity_matrix(4)
+  E4 = elementary_matrix(4, row1=2, row2=3)
+\end{sagesilent}
+
+\begin{ex}
+  \begin{align*}
+    \sage{I2} &\xrightarrow{3\cdot R_2\to R_2}\sage{E2} \\
+    \sage{I3} &\xrightarrow{R_2-\nicefrac{1}{2}\cdot R_1\to R_2}\sage{E3} \\
+    \sage{I4} &\xrightarrow{R_3\leftrightarrow R_4}\sage{E4}
+  \end{align*}
+\end{ex}
+
+\begin{idea}
+  Multiplication by elementary matrices on the left results in performing the
+  corresponding elementary row operation.
+\end{idea}
+
+
+
+\newpage
+\begin{sagesilent}
+  A = matrix([[1,7],[0,1/3]])
+  E = elementary_matrix(2, row1=1, scale=3)
+\end{sagesilent}
+
+\begin{ex}
+  Performing $3\cdot R_2\to R_2$ on $A=\sage{A}$ gives
+  \[
+  \sage{A}\xrightarrow{3\cdot R_2\to R_2}\sage{E*A}
+  \]
+  The row-operation $3\cdot R_2\to R_2$ corresponds to the elementary matrix
+  $E=\sage{E}$. Computing $EA$ gives
+  \[
+  EA = \sage{E}\sage{A}=\sage{E*A}
+  \]
+\end{ex}
+
+\begin{thm}
+  Elementary matrices are invertible and their inverses are
+  \begin{align*}
+    [R_i\leftrightarrow R_j]^{-1} &= [R_i\leftrightarrow R_j] \\
+    [\lambda\cdot R_i\to R_i]^{-1} &= [\nicefrac{1}{\lambda}\cdot R_i\to R_i] \\
+    [R_i+\lambda\cdot R_j\to R_i]^{-1} &= [R_i-\lambda\cdot R_j\to R_i]
+  \end{align*}
+\end{thm}
+
+
+\newpage
+\begin{sagesilent}
+  import gaussjordan
+  A = matrix([[1,2],[3,5]])
+  B = identity_matrix(2)
+  M = A.augment(B, subdivide=True)
+  E1 = elementary_matrix(2, row1=1, row2=0, scale=-3)
+  E2 = elementary_matrix(2, row1=1, scale=-1)
+  E3 = elementary_matrix(2, row1=0, row1=1, scale=-2)
+\end{sagesilent}
+
+\begin{ex}
+  Write $A^{-1}$ as a product of elementary matrices where $A=\sage{A}$.
+\end{ex}
+\begin{sol}
+  Row reduce
+  {\allowdisplaybreaks  
+    \sage{gaussjordan.latex_reduction(M)}}%
+  This gives $A^{-1}=\sage{A.inverse()}$. 
+
+  These row reductions correspond to elementary matrices
+  \begin{align*}
+    E_1 &= [R_2-3\cdot R_1\to R_2] = \sage{E1} \\
+    E_2 &= [-R_2\to R_2] = \sage{E2} \\
+    E_3 &= [R_1-2\cdot R_2\to R_1] = \sage{E3}
+  \end{align*}
+\end{sol}
+
+
+
+\bibliography{mybib.bib}{}
+\bibliographystyle{plain}
+
+\end{document}
+
+\message{ !name(1.3.tex) !offset(-208) }

@@ -1,9 +1,9 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.1)  22 MAY 2017 22:17
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.1)  18 MAY 2017 18:47
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
-**\input 1.1.tex
-(./1.1.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+**\input 1.3.tex
+(./1.3.tex (/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
 Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
@@ -105,6 +105,31 @@ LaTeX Info: Redefining \cite on input line 302.
 LaTeX Info: Redefining \nocite on input line 373.
 Package: cite 2010/09/10  v 5.3
 )
+(/usr/share/texlive/texmf-dist/tex/latex/blindtext/blindtext.sty
+Package: blindtext 2012/01/06 V2.0 blindtext-Package
+
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2009/10/20 v1.13 Space after command names (DPC,MH)
+)
+\c@blindtext=\count99
+\c@Blindtext=\count100
+\c@blind@countparstart=\count101
+\blind@countxx=\count102
+\blindtext@numBlindtext=\count103
+\blind@countyy=\count104
+\c@blindlist=\count105
+\c@blindlistlevel=\count106
+\c@blindlist@level=\count107
+\blind@listitem=\count108
+\c@blind@listcount=\count109
+\c@blind@levelcount=\count110
+\blind@mathformula=\count111
+\blind@Mathformula=\count112
+\c@blind@randomcount=\count113
+\c@blind@randommax=\count114
+\c@blind@pangramcount=\count115
+\c@blind@pangrammax=\count116
+)
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mathtools.sty
 Package: mathtools 2013/02/12 v1.13 mathematical typesetting tools
 
@@ -114,15 +139,15 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 )
 (/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty
 Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count99
-\calc@Bcount=\count100
+\calc@Acount=\count117
+\calc@Bcount=\count118
 \calc@Adimen=\dimen112
 \calc@Bdimen=\dimen113
 \calc@Askip=\skip49
 \calc@Bskip=\skip50
 LaTeX Info: Redefining \setlength on input line 76.
 LaTeX Info: Redefining \addtolength on input line 77.
-\calc@Ccount=\count101
+\calc@Ccount=\count119
 \calc@Cskip=\skip51
 )
 (/usr/share/texlive/texmf-dist/tex/latex/mh/mhsetup.sty
@@ -130,7 +155,7 @@ Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
 )
 LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
 LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
-\g_MT_multlinerow_int=\count102
+\g_MT_multlinerow_int=\count120
 \l_MT_multwidth_dim=\dimen114
 \origjot=\skip52
 \l_MT_shortvdotswithinadjustabove_dim=\dimen115
@@ -212,31 +237,31 @@ Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
 <2008/02/07> (tvz)
-\FV@CodeLineNo=\count103
+\FV@CodeLineNo=\count121
 \FV@InFile=\read2
 \FV@TabBox=\box28
-\c@FancyVerbLine=\count104
-\FV@StepNumber=\count105
+\c@FancyVerbLine=\count122
+\FV@StepNumber=\count123
 \FV@OutFile=\write3
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count106
+\lst@mode=\count124
 \lst@gtempboxa=\box29
 \lst@token=\toks33
-\lst@length=\count107
+\lst@length=\count125
 \lst@currlwidth=\dimen124
-\lst@column=\count108
-\lst@pos=\count109
+\lst@column=\count126
+\lst@pos=\count127
 \lst@lostspace=\dimen125
 \lst@width=\dimen126
-\lst@newlines=\count110
-\lst@lineno=\count111
+\lst@newlines=\count128
+\lst@lineno=\count129
 \lst@maxwidth=\dimen127
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2013/08/26 1.5b (Carsten Heinz)
-\c@lstnumber=\count112
-\lst@skipnumbers=\count113
+\c@lstnumber=\count130
+\lst@skipnumbers=\count131
 \lst@framebox=\box30
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
@@ -261,7 +286,7 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
 Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count114
+\Gread@gobject=\count132
 ))
 (/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -290,12 +315,12 @@ Package ifpdf Info: pdfTeX in PDF mode is detected.
 (/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-\c@ST@inline=\count115
-\c@ST@plot=\count116
-\c@ST@cmdline=\count117
+\c@ST@inline=\count133
+\c@ST@plot=\count134
+\c@ST@cmdline=\count135
 \sagetexindent=\skip72
 
-(./1.1.sagetex.sout)
+(./1.3.sagetex.sout)
 \sagecommandlineskip=\skip73
 ) (/usr/share/texmf/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
@@ -336,10 +361,10 @@ Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 \pgf@yc=\dimen137
 \w@pgf@writea=\write4
 \r@pgf@reada=\read3
-\c@pgf@counta=\count118
-\c@pgf@countb=\count119
-\c@pgf@countc=\count120
-\c@pgf@countd=\count121
+\c@pgf@counta=\count136
+\c@pgf@countb=\count137
+\c@pgf@countc=\count138
+\c@pgf@countd=\count139
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -354,8 +379,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count122
-\pgfsyssoftpath@bigbuffer@items=\count123
+\pgfsyssoftpath@smallbuffer@items=\count140
+\pgfsyssoftpath@bigbuffer@items=\count141
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -386,7 +411,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
 \pgfmath@dimen=\dimen138
-\pgfmath@count=\count124
+\pgfmath@count=\count142
 \pgfmath@box=\box32
 \pgfmath@toks=\toks38
 \pgfmath@stack@operand=\toks39
@@ -401,7 +426,7 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count125
+\c@pgfmathroundto@lastzeros=\count143
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
@@ -435,7 +460,7 @@ File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box33
 \pgf@hbox=\box34
 \pgf@layerbox@main=\box35
-\pgf@picture@serial@count=\count126
+\pgf@picture@serial@count=\count144
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
@@ -462,7 +487,7 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
 \pgf@max=\dimen161
-\pgf@sys@shading@range@num=\count127
+\pgf@sys@shading@range@num=\count145
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -510,7 +535,7 @@ Package: tikz 2010/10/13 v2.10 (rcs-revision 1.76)
 
 (/usr/share/texmf/tex/generic/pgf/libraries/pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
-\pgf@plot@mark@count=\count128
+\pgf@plot@mark@count=\count146
 \pgfplotmarksize=\dimen166
 )
 \tikz@lastx=\dimen167
@@ -521,18 +546,18 @@ File: pgflibraryplothandlers.code.tex 2010/05/31 v2.10 (rcs-revision 1.15)
 \tikzsiblingdistance=\dimen172
 \tikz@figbox=\box38
 \tikz@tempbox=\box39
-\tikztreelevel=\count129
-\tikznumberofchildren=\count130
-\tikznumberofcurrentchild=\count131
-\tikz@fig@count=\count132
+\tikztreelevel=\count147
+\tikznumberofchildren=\count148
+\tikznumberofcurrentchild=\count149
+\tikz@fig@count=\count150
 
 (/usr/share/texmf/tex/generic/pgf/modules/pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2010/08/24  (rcs-revision 1.4)
-\pgfmatrixcurrentrow=\count133
-\pgfmatrixcurrentcolumn=\count134
-\pgf@matrix@numberofcolumns=\count135
+\pgfmatrixcurrentrow=\count151
+\pgfmatrixcurrentcolumn=\count152
+\pgf@matrix@numberofcolumns=\count153
 )
-\tikz@expandcount=\count136
+\tikz@expandcount=\count154
 
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarytopat
 hs.code.tex
@@ -543,8 +568,8 @@ Package: tikz-cd 2012/12/30 v0.3c Commutative diagrams with tikz.
 (/usr/share/texmf/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarymatri
 x.code.tex
 File: tikzlibrarymatrix.code.tex 2008/06/18 v2.10 (rcs-revision 1.2)
-)) (./style.tex) (./1.1.aux)
-\openout1 = `1.1.aux'.
+)) (./style.tex) (./1.3.aux)
+\openout1 = `1.3.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
 LaTeX Font Info:    ... okay on input line 6.
@@ -565,20 +590,20 @@ File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 ABD: EverySelectfont initializing macros
 LaTeX Info: Redefining \selectfont on input line 6.
-\c@lstlisting=\count137
+\c@lstlisting=\count155
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count138
+\scratchcounter=\count156
 \scratchdimen=\dimen173
 \scratchbox=\box40
-\nofMPsegments=\count139
-\nofMParguments=\count140
+\nofMPsegments=\count157
+\nofMParguments=\count158
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count141
+\MPscratchCnt=\count159
 \MPscratchDim=\dimen174
-\MPnumerator=\count142
-\makeMPintoPDFobject=\count143
+\MPnumerator=\count160
+\makeMPintoPDFobject=\count161
 \everyMPtoPDFconversion=\toks44
 ) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
@@ -625,12 +650,12 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \ST@sf=\write5
-\openout5 = `1.1.sagetex.sage'.
+\openout5 = `1.3.sagetex.sage'.
 
 
 ABD: EveryShipout initializing macros
-Underfull \hbox (badness 2302) in paragraph at lines 12--12
- []\T1/pcr/m/n/20.74 Systems of Linear Equations 
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+ []\T1/pcr/m/n/20.74 Inverses of Matrices 
  []
 
 LaTeX Font Info:    Try loading font information for U+msa on input line 12.
@@ -648,92 +673,62 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 12--12
- [] \T1/pcr/m/n/14.4 [1, Ÿ1.1] 
+ [] \T1/pcr/m/n/14.4 [1, Ÿ1.3] 
+ []
+
+
+Overfull \hbox (27.04477pt too wide) in paragraph at lines 59--62
+\T1/pcr/m/n/12 A matrix is []non[][]in[][]vert[][]ible or []sin[][]gu[][]lar if
+ it does not have an inverse.  
  []
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (17.5408pt too wide) in paragraph at lines 116--116
-[]\T1/pcr/m/sc/17.28 Augmented Matrices and Reduced Row-Echelon Form  
- []
-
-
-Overfull \hbox (4.69443pt too wide) in paragraph at lines 153--154
-[]\T1/pcr/m/n/12 the first nonzero entry of a nonzero row is $\OT1/cmr/m/n/12 1
-$ \T1/pcr/m/n/12 (called a []pivot)  
- []
-
-[4]
-Overfull \hbox (9.44478pt too wide) in paragraph at lines 218--220
-[]\T1/pcr/m/sc/12 Idea. []\T1/pcr/m/n/12 Solving consistent rref systems is []e
-asy: write the dependent 
- []
-
-[5]
-Overfull \hbox (28.6646pt too wide) in paragraph at lines 261--264
-\T1/pcr/m/n/12 is consistent with no free variables. The only solution is $\OT1
-/cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; x[]\OT1/cmr/m/n/12 ) = 
- []
-
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <12> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 284.
-[6] [7] [8]
-Overfull \hbox (2.24478pt too wide) in paragraph at lines 354--356
-[]\T1/pcr/m/sc/12 Thm. []\T1/pcr/m/sl/12 Performing an elementary row operation
- on an augmented matrix 
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 68.
+ [2] [3] [4] [5] [6]
+Overfull \hbox (10.3778pt too wide) in paragraph at lines 182--183
+[]\T1/pcr/m/sc/12 Ex. []\T1/pcr/m/n/12 Write $\OML/cmm/m/it/12 A[]$ \T1/pcr/m/n
+/12 as a product of elementary matrices where $\OML/cmm/m/it/12 A \OT1/cmr/m/n/
+12 = [] [][][][]$\T1/pcr/m/n/12 .  
  []
 
-
-Overfull \hbox (9.44478pt too wide) in paragraph at lines 370--372
-[]\T1/pcr/m/sc/12 Thm \T1/pcr/m/n/12 (Gauÿ-Jordan Elimination)\T1/pcr/m/sc/12 .
- []\T1/pcr/m/sl/12 Every augmented matrix is equivalent 
+[7] [8]
+Overfull \hbox (42.61035pt too wide) in paragraph at lines 235--238
+\T1/pcr/m/n/12 So, the system $\OML/cmm/m/it/12 A[] \OT1/cmr/m/n/12 = []$ \T1/p
+cr/m/n/12 only has the trivial solution. By the fundamental 
  []
 
-[9] [10] [11]
-Overfull \hbox (28.8719pt too wide) in paragraph at lines 433--436
-\T1/pcr/m/n/12 The rref is consistent with free variable $[]\OML/cmm/m/it/12 x[
-][]$ \T1/pcr/m/n/12 and dependent variables 
- []
-
-[12]
-Overfull \hbox (41.44476pt too wide) in paragraph at lines 463--465
-\T1/pcr/m/n/12 its rref. Equivalently, the rank is the number of dependent vari
-ables.  
- []
-
-
-Overfull \hbox (5.44478pt too wide) in paragraph at lines 491--493
-\T1/pcr/m/n/12 columns in its rref. Equivalently, the rank is the number of fre
-e 
- []
-
-[13] [14] (./1.1.bbl)
+(./1.3.bbl)
 *********************************************************************
-[15] (./1.1.aux) ) 
+[9] (./1.3.aux) ) 
 Here is how much of TeX's memory you used:
- 14271 strings out of 493304
- 253146 string characters out of 6139872
- 323725 words of memory out of 5000000
- 17392 multiletter control sequences out of 15000+600000
- 17581 words of font info for 64 fonts, out of 8000000 for 9000
+ 14434 strings out of 493304
+ 255882 string characters out of 6139872
+ 332874 words of memory out of 5000000
+ 17548 multiletter control sequences out of 15000+600000
+ 16937 words of font info for 62 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 58i,18n,63p,441b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
-xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on 1.1.pdf (15 pages, 124678 bytes).
+ 58i,18n,63p,441b,282s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sha
+re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/tex
+live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
+blic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/a
+msfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmt
+t12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam
+10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm1
+0.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
+Output written on 1.3.pdf (9 pages, 131515 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 72 compressed objects within 1 object stream
+ 94 PDF objects out of 1000 (max. 8388607)
+ 68 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 

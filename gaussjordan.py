@@ -1,5 +1,5 @@
 from collections import namedtuple
-from sage.all import elementary_matrix, latex
+from sage.all import elementary_matrix, latex, SR
 
 
 def swaptex(i, j):
@@ -91,6 +91,11 @@ def reduction_info(A):
     return RowInfo(A, elems, tex)
 
 
+def rreplace(s, old, new, occurrence):
+    li = s.rsplit(old, occurrence)
+    return new.join(li)
+
+
 def latex_reduction(A, M=None):
     if M is None:
         M = A
@@ -100,6 +105,11 @@ def latex_reduction(A, M=None):
     s += '\n'
     for l, E in zip(info.latex, info.elems):
         M = E * M
-        s += '&\\xrightarrow{{{}}}\n{} \\\\ \n'.format(l, latex(M))
+        A = E * A
+        print A == A.rref()
+        if A != A.rref():
+            s += '&\\xrightarrow{{{}}}\n{} \\\\ \n'.format(l, latex(M))
+        else:
+            s += '&\\xrightarrow{{{}}}\n{} \n'.format(l, latex(M))
     s += '\\end{align*}'
     return s
