@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.1)  30 MAY 2017 15:33
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.4.1)  30 MAY 2017 15:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -654,56 +654,56 @@ Underfull \hbox (badness 10000) in paragraph at lines 12--12
 [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2] [3]
-Overfull \hbox (17.5408pt too wide) in paragraph at lines 118--118
+Overfull \hbox (17.5408pt too wide) in paragraph at lines 116--116
 []\T1/pcr/m/sc/17.28 Augmented Matrices and Reduced Row-Echelon Form  
  []
 
 
-Overfull \hbox (4.69443pt too wide) in paragraph at lines 155--156
+Overfull \hbox (4.69443pt too wide) in paragraph at lines 153--154
 []\T1/pcr/m/n/12 the first nonzero entry of a nonzero row is $\OT1/cmr/m/n/12 1
 $ \T1/pcr/m/n/12 (called a []pivot)  
  []
 
 [4]
-Overfull \hbox (9.44478pt too wide) in paragraph at lines 220--222
+Overfull \hbox (9.44478pt too wide) in paragraph at lines 218--220
 []\T1/pcr/m/sc/12 Idea. []\T1/pcr/m/n/12 Solving consistent rref systems is []e
 asy: write the dependent 
  []
 
 [5]
-Overfull \hbox (28.6646pt too wide) in paragraph at lines 263--266
+Overfull \hbox (28.6646pt too wide) in paragraph at lines 261--264
 \T1/pcr/m/n/12 is consistent with no free variables. The only solution is $\OT1
 /cmr/m/n/12 (\OML/cmm/m/it/12 x[]; x[]; x[]\OT1/cmr/m/n/12 ) = 
  []
 
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <12> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 286.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 284.
 [6] [7] [8]
-Overfull \hbox (2.24478pt too wide) in paragraph at lines 356--358
+Overfull \hbox (2.24478pt too wide) in paragraph at lines 354--356
 []\T1/pcr/m/sc/12 Thm. []\T1/pcr/m/sl/12 Performing an elementary row operation
  on an augmented matrix 
  []
 
 
-Overfull \hbox (9.44478pt too wide) in paragraph at lines 372--374
+Overfull \hbox (9.44478pt too wide) in paragraph at lines 370--372
 []\T1/pcr/m/sc/12 Thm \T1/pcr/m/n/12 (Gauÿ-Jordan Elimination)\T1/pcr/m/sc/12 .
  []\T1/pcr/m/sl/12 Every augmented matrix is equivalent 
  []
 
 [9] [10] [11]
-Overfull \hbox (28.8719pt too wide) in paragraph at lines 435--438
+Overfull \hbox (28.8719pt too wide) in paragraph at lines 433--436
 \T1/pcr/m/n/12 The rref is consistent with free variable $[]\OML/cmm/m/it/12 x[
 ][]$ \T1/pcr/m/n/12 and dependent variables 
  []
 
 [12]
-Overfull \hbox (41.44476pt too wide) in paragraph at lines 465--467
+Overfull \hbox (41.44476pt too wide) in paragraph at lines 463--465
 \T1/pcr/m/n/12 its rref. Equivalently, the rank is the number of dependent vari
 ables.  
  []
 
 
-Overfull \hbox (5.44478pt too wide) in paragraph at lines 493--495
+Overfull \hbox (5.44478pt too wide) in paragraph at lines 491--493
 \T1/pcr/m/n/12 columns in its rref. Equivalently, the rank is the number of fre
 e 
  []
@@ -718,7 +718,7 @@ Here is how much of TeX's memory you used:
  17404 multiletter control sequences out of 15000+600000
  17581 words of font info for 64 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
- 58i,18n,63p,441b,297s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 58i,18n,63p,441b,299s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</
 usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/sh
 are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/te
@@ -730,7 +730,7 @@ ublic/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrr8a.p
 fb></usr/share/texlive/texmf-dist/fonts/type1/urw/courier/ucrro8a.pfb>
-Output written on 1.1.pdf (15 pages, 125132 bytes).
+Output written on 1.1.pdf (15 pages, 125103 bytes).
 PDF statistics:
  101 PDF objects out of 1000 (max. 8388607)
  72 compressed objects within 1 object stream
